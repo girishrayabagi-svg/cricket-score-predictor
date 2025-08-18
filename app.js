@@ -28,14 +28,14 @@ class CricketPredictor {
                 },
                 {
                     id: 2,
-                    name: "Babar Azam",
-                    matches: 102,
-                    average: 59.71,
-                    strikeRate: 88.69,
-                    centuries: 18,
-                    format: "ODI",
-                    strongVenues: ["National Stadium Karachi", "Gaddafi Stadium"],
-                    weakVenues: ["MCG", "Old Trafford"]
+                    name: "Will Jacks",
+                    matches: 37,
+                    average: 26.08,
+                    strikeRate: 161.02,
+                    centuries: 1,
+                    format: "T20",
+                    strongVenues: ["The Oval"],
+                    weakVenues: ["Birmingham", "Old Trafford"]
                 },
                 {
                     id: 3,
@@ -83,14 +83,14 @@ class CricketPredictor {
                 },
                 {
                     id: 7,
-                    name: "Rohit Sharma",
-                    matches: 243,
-                    average: 48.63,
-                    strikeRate: 89.22,
-                    centuries: 30,
-                    format: "ODI",
-                    strongVenues: ["Wankhede Stadium", "Eden Gardens"],
-                    weakVenues: ["Lords", "Perth Stadium"]
+                    name: "James Vince",
+                    matches: 40,
+                    average: 31.51,
+                    strikeRate: 138.85,
+                    centuries: 0,
+                    format: "T20",
+                    strongVenues: ["Southampton", "Eden Gardens"],
+                    weakVenues: ["Southampton", "Birmingham"]
                 },
                 {
                     id: 8,
@@ -118,6 +118,17 @@ class CricketPredictor {
                 },
                 {
                     id: 2,
+                    name: "The Lords",
+                    city: "London",
+                    country: "England",
+                    averageScore: 245,
+                    venueFactor: 0.95,
+                    battingFriendly: false,
+                    boundarySize: "Medium",
+                    pitchType: "Bowler-friendly"
+                },
+                    {
+                    id: 3,
                     name: "The Lords",
                     city: "London",
                     country: "England",

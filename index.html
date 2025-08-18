@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Predictor - AI-Powered Batting Performance Prediction</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Cricket Score Predictor</h1>
+                <p class="subtitle">AI-Powered Individual Batting Performance Prediction</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="prediction-layout">
+                <!-- Left Panel - Input Form -->
+                <div class="input-panel">
+                    <form id="prediction-form" class="prediction-form">
+                        <!-- Player Information -->
+                        <section class="form-section">
+                            <h3>Player Information</h3>
+                            <div class="form-group">
+                                <label class="form-label" for="player-select">Select Player</label>
+                                <select id="player-select" class="form-control" required>
+                                    <option value="">Choose a player...</option>
+                                </select>
+                            </div>
+                            <div id="player-stats" class="player-stats hidden">
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Matches</span>
+                                        <span class="stat-value" id="player-matches">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Average</span>
+                                        <span class="stat-value" id="player-average">-</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Strike Rate</span>
+                                        <span class="stat-value" id="player-sr">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Match Context -->
+                        <section class="form-section">
+                            <h3>Match Context</h3>
+                            <div class="form-group">
+                                <label class="form-label" for="venue-select">Ground/Venue</label>
+                                <select id="venue-select" class="form-control" required>
+                                    <option value="">Select venue...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="opposition-select">Opposition Team</label>
+                                <select id="opposition-select" class="form-control" required>
+                                    <option value="">Select opposition...</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="format-select">Match Format</label>
+                                <select id="format-select" class="form-control" required>
+                                    <option value="">Select format...</option>
+                                    <option value="T20">T20</option>
+                                    <option value="ODI">ODI</option>
+                                    <option value="Test">Test</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="batting-position">Batting Position: <span id="position-value">6</span></label>
+                                <input type="range" id="batting-position" class="form-range" min="1" max="11" value="6">
+                            </div>
+                        </section>
+
+                        <!-- Environmental Conditions -->
+                        <section class="form-section">
+                            <h3>Environmental Conditions</h3>
+                            <div class="form-group">
+                                <label class="form-label" for="weather-select">Weather</label>
+                                <select id="weather-select" class="form-control">
+                                    <option value="sunny">Sunny</option>
+                                    <option value="cloudy" selected>Cloudy</option>
+                                    <option value="overcast">Overcast</option>
+                                    <option value="light-rain">Light Rain</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="temperature">Temperature: <span id="temp-value">25</span>°C</label>
+                                <input type="range" id="temperature" class="form-range" min="15" max="45" value="25">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="humidity">Humidity: <span id="humidity-value">60</span>%</label>
+                                <input type="range" id="humidity" class="form-range" min="30" max="90" value="60">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dew Factor (Evening Matches)</label>
+                                <div class="toggle-group">
+                                    <label class="toggle-option">
+                                        <input type="radio" name="dew" value="no" checked>
+                                        <span>No</span>
+                                    </label>
+                                    <label class="toggle-option">
+                                        <input type="radio" name="dew" value="yes">
+                                        <span>Yes</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="wind-speed">Wind Speed: <span id="wind-value">5</span> km/h</label>
+                                <input type="range" id="wind-speed" class="form-range" min="0" max="30" value="5">
+                            </div>
+                        </section>
+
+                        <!-- Player Form & Condition -->
+                        <section class="form-section">
+                            <h3>Player Form & Condition</h3>
+                            <div class="form-group">
+                                <label class="form-label" for="recent-form">Recent Form: <span id="form-value">7</span>/10</label>
+                                <input type="range" id="recent-form" class="form-range" min="1" max="10" value="7">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="sleep-quality">Sleep Quality: <span id="sleep-value">8</span>/10</label>
+                                <input type="range" id="sleep-quality" class="form-range" min="1" max="10" value="8">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Injury Concerns</label>
+                                <div class="toggle-group">
+                                    <label class="toggle-option">
+                                        <input type="radio" name="injury" value="none" checked>
+                                        <span>None</span>
+                                    </label>
+                                    <label class="toggle-option">
+                                        <input type="radio" name="injury" value="minor">
+                                        <span>Minor</span>
+                                    </label>
+                                    <label class="toggle-option">
+                                        <input type="radio" name="injury" value="significant">
+                                        <span>Significant</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="days-since-match">Days Since Last Match: <span id="days-value">3</span></label>
+                                <input type="range" id="days-since-match" class="form-range" min="0" max="30" value="3">
+                            </div>
+                        </section>
+
+                        <!-- Psychological Factors -->
+                        <section class="form-section">
+                            <h3>Psychological Factors</h3>
+                            <div class="form-group">
+                                <label class="form-label" for="mood-select">Mood Assessment</label>
+                                <select id="mood-select" class="form-control">
+                                    <option value="excellent">Excellent</option>
+                                    <option value="good" selected>Good</option>
+                                    <option value="average">Average</option>
+                                    <option value="poor">Poor</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Pressure Situation</label>
+                                <div class="toggle-group">
+                                    <label class="toggle-option">
+                                        <input type="radio" name="pressure" value="normal" checked>
+                                        <span>Normal</span>
+                                    </label>
+                                    <label class="toggle-option">
+                                        <input type="radio" name="pressure" value="high">
+                                        <span>High Pressure</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="social-sentiment">Social Media Sentiment: <span id="sentiment-value">0</span></label>
+                                <input type="range" id="social-sentiment" class="form-range" min="-5" max="5" value="0">
+                            </div>
+                        </section>
+
+                        <button type="submit" class="btn btn--primary btn--lg predict-btn">
+                            <span class="btn-text">Predict Score</span>
+                            <span class="btn-loading hidden">Calculating...</span>
+                        </button>
+
+                        <button type="button" class="btn btn--outline reset-btn">Reset Form</button>
+                    </form>
+                </div>
+
+                <!-- Right Panel - Results -->
+                <div class="results-panel">
+                    <div id="prediction-results" class="results-content hidden">
+                        <!-- Main Prediction -->
+                        <section class="main-prediction">
+                            <h2>Predicted Score</h2>
+                            <div class="score-display">
+                                <span class="predicted-runs" id="predicted-runs">42</span>
+                                <span class="runs-label">runs</span>
+                            </div>
+                            <div class="confidence-range">
+                                Range: <span id="confidence-range">28-56 runs</span>
+                            </div>
+                        </section>
+
+                        <!-- Probability Distribution -->
+                        <section class="probability-section">
+                            <h3>Score Probability</h3>
+                            <div class="probability-chart" id="probability-chart">
+                                <div class="prob-bar" data-range="0-20">
+                                    <span class="prob-label">0-20 runs</span>
+                                    <div class="prob-fill" style="width: 0%"></div>
+                                    <span class="prob-percent">0%</span>
+                                </div>
+                                <div class="prob-bar" data-range="21-40">
+                                    <span class="prob-label">21-40 runs</span>
+                                    <div class="prob-fill" style="width: 0%"></div>
+                                    <span class="prob-percent">0%</span>
+                                </div>
+                                <div class="prob-bar" data-range="41-60">
+                                    <span class="prob-label">41-60 runs</span>
+                                    <div class="prob-fill" style="width: 0%"></div>
+                                    <span class="prob-percent">0%</span>
+                                </div>
+                                <div class="prob-bar" data-range="60+">
+                                    <span class="prob-label">60+ runs</span>
+                                    <div class="prob-fill" style="width: 0%"></div>
+                                    <span class="prob-percent">0%</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <!-- Factor Breakdown -->
+                        <section class="factors-section">
+                            <h3>Contributing Factors</h3>
+                            <div class="factors-list" id="factors-list">
+                                <!-- Factors will be populated by JavaScript -->
+                            </div>
+                        </section>
+
+                        <!-- Detailed Analysis -->
+                        <section class="analysis-section">
+                            <h3>Detailed Analysis</h3>
+                            <div class="analysis-text" id="analysis-text">
+                                <!-- Analysis will be populated by JavaScript -->
+                            </div>
+                        </section>
+
+                        <div class="results-actions">
+                            <button class="btn btn--outline" id="export-btn">Export Summary</button>
+                            <button class="btn btn--secondary" id="new-prediction-btn">New Prediction</button>
+                        </div>
+                    </div>
+
+                    <div id="results-placeholder" class="results-placeholder">
+                        <div class="placeholder-content">
+                            <h3>Ready to Predict</h3>
+                            <p>Fill in the player and match details to generate your batting score prediction.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="disclaimer">
+                <strong>Disclaimer:</strong> Predictions are statistical estimates based on historical data and current factors. 
+                Actual match performance may vary significantly due to unpredictable variables in live cricket matches.
+            </p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

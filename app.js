@@ -157,14 +157,14 @@ class CricketPredictor {
                 },
                 {
                     id: 3,
-                    name: "England",
+                    name: "Southern Brave",
                     bowlingStrength: 8.1,
                     paceAttack: 8.5,
                     spinAttack: 7.2
                 },
                 {
                     id: 4,
-                    name: "Pakistan",
+                    name: "Oval Invincibles",
                     bowlingStrength: 8.3,
                     paceAttack: 8.8,
                     spinAttack: 8.0

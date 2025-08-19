@@ -435,22 +435,24 @@ class CricketPredictor {
         const formatAdj = formatAdjustments[formData.format];
         baseScore = baseScore * formatAdj.multiplier;
 
-        // Days since last match
-        const daysSince = formData.daysSinceMatch;
-        if (daysSince >= 7 && daysSince <= 14) physicalMultiplier *= 1.01;
-        else if (daysSince > 21) physicalMultiplier *= 0.97;
+      // Days since last match + injury effects
+let physicalMultiplier = 1;  // <-- Add this initialization
+const daysSince = formData.daysSinceMatch;
 
-        // Injury concerns
-        if (formData.injury === 'minor') physicalMultiplier *= 0.95;
-        else if (formData.injury === 'significant') physicalMultiplier *= 0.85;
+if (daysSince >= 7 && daysSince <= 14) physicalMultiplier *= 1.01;
+else if (daysSince > 21) physicalMultiplier *= 0.97;
 
-        const physicalImpact = Math.round(baseScore * (physicalMultiplier - 1));
-        baseScore *= physicalMultiplier;
-        factors.push({
-            name: 'Physical Condition',
-            impact: physicalImpact,
-            type: physicalImpact >= 0 ? 'positive' : 'negative'
-        });
+// Injury concerns
+if (formData.injury === 'minor') physicalMultiplier *= 0.95;
+else if (formData.injury === 'significant') physicalMultiplier *= 0.85;
+
+const physicalImpact = Math.round(baseScore * (physicalMultiplier - 1));
+baseScore *= physicalMultiplier;
+factors.push({
+    name: 'Physical Condition',
+    impact: physicalImpact,
+    type: physicalImpact >= 0 ? 'positive' : 'negative'
+});
 
         // Batting position adjustment
         const position = formData.battingPosition;

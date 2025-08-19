@@ -5,7 +5,6 @@ class CricketPredictor {
         this.form = document.getElementById('prediction-form');
         this.resultsPanel = document.getElementById('prediction-results');
         this.resultsPlaceholder = document.getElementById('results-placeholder');
-        
         this.initializeElements();
         this.bindEvents();
         this.populateDropdowns();

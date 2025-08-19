@@ -234,9 +234,7 @@ class CricketPredictor {
             humidity: document.getElementById('humidity'),
             windSpeed: document.getElementById('wind-speed'),
             recentForm: document.getElementById('recent-form'),
-            sleepQuality: document.getElementById('sleep-quality'),
             daysSinceMatch: document.getElementById('days-since-match'),
-            socialSentiment: document.getElementById('social-sentiment'),
             playerStats: document.getElementById('player-stats'),
             predictBtn: document.querySelector('.predict-btn'),
             resetBtn: document.querySelector('.reset-btn'),
@@ -260,9 +258,7 @@ class CricketPredictor {
             { element: this.elements.humidity, display: 'humidity-value' },
             { element: this.elements.windSpeed, display: 'wind-value' },
             { element: this.elements.recentForm, display: 'form-value' },
-            { element: this.elements.sleepQuality, display: 'sleep-value' },
             { element: this.elements.daysSinceMatch, display: 'days-value' },
-            { element: this.elements.socialSentiment, display: 'sentiment-value' }
         ];
 
         sliders.forEach(slider => {
@@ -304,9 +300,7 @@ class CricketPredictor {
         document.getElementById('humidity-value').textContent = this.elements.humidity.value;
         document.getElementById('wind-value').textContent = this.elements.windSpeed.value;
         document.getElementById('form-value').textContent = this.elements.recentForm.value;
-        document.getElementById('sleep-value').textContent = this.elements.sleepQuality.value;
         document.getElementById('days-value').textContent = this.elements.daysSinceMatch.value;
-        document.getElementById('sentiment-value').textContent = this.elements.socialSentiment.value;
     }
 
     updatePlayerStats() {
@@ -442,17 +436,7 @@ class CricketPredictor {
         const formatAdj = formatAdjustments[formData.format];
         baseScore = baseScore * formatAdj.multiplier;
 
-        // Psychological factors
        
-       
-        const psychImpact = Math.round(baseScore * (psychMultiplier - 1));
-        baseScore *= psychMultiplier;
-        factors.push({
-            name: 'Psychological State',
-            impact: psychImpact,
-            type: psychImpact >= 0 ? 'positive' : 'negative'
-        });
-
         // Physical condition
         let physicalMultiplier = 1;
         

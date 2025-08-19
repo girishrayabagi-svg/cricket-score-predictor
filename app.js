@@ -175,7 +175,7 @@ class CricketPredictor {
                     name: "Trent Bridge",
                     city: "Nottingham",
                     country: "England",
-                    averageScore: 108,
+                    averageScore: 130,
                     venueFactor: 0.95,
                     battingFriendly: true,
                     boundarySize: "Medium",

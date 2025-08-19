@@ -443,15 +443,8 @@ class CricketPredictor {
         baseScore = baseScore * formatAdj.multiplier;
 
         // Psychological factors
-        let psychMultiplier = 1;
-        const moodValues = { excellent: 1.05, good: 1.0, average: 0.98, poor: 0.93 };
-        psychMultiplier *= moodValues[formData.mood];
-
-        if (formData.pressure === 'high') psychMultiplier *= 0.95;
-        
-        const sentimentImpact = formData.socialSentiment * 0.005;
-        psychMultiplier *= (1 + sentimentImpact);
-
+       
+       
         const psychImpact = Math.round(baseScore * (psychMultiplier - 1));
         baseScore *= psychMultiplier;
         factors.push({
@@ -463,9 +456,7 @@ class CricketPredictor {
         // Physical condition
         let physicalMultiplier = 1;
         
-        // Sleep quality
-        if (formData.sleepQuality >= 8) physicalMultiplier *= 1.02;
-        else if (formData.sleepQuality <= 5) physicalMultiplier *= 0.96;
+      
 
         // Days since last match
         const daysSince = formData.daysSinceMatch;

@@ -23,7 +23,7 @@ class CricketPredictor {
                     centuries: 46,
                     format: "ODI",
                     strongVenues: ["Eden Gardens", "M Chinnaswamy Stadium"],
-                    weakVenues: ["Lords", "SCG"]
+                    weakVenues: ["lord's", "SCG"]
                 },
                 {
                     id: 2,
@@ -56,7 +56,7 @@ class CricketPredictor {
                     centuries: 18,
                     format: "ODI",
                     strongVenues: ["SCG", "MCG"],
-                    weakVenues: ["Lords", "The Oval"]
+                    weakVenues: ["lord's", "The Oval"]
                 },
                 {
                     id: 5,
@@ -139,7 +139,7 @@ class CricketPredictor {
                 },
                 {
                     id: 2,
-                    name: "The Lords",
+                    name: "The lord's",
                     city: "London",
                     country: "England",
                     averageScore: 245,

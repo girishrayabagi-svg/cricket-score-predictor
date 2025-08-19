@@ -92,8 +92,30 @@ class CricketPredictor {
                     strongVenues: ["Southampton", "Eden Gardens"],
                     weakVenues: ["Southampton", "Birmingham"]
                 },
-                {
+                 {
                     id: 8,
+                    name: "Bryony Smith",
+                    matches: 34,
+                    average: 19.55,
+                    strikeRate: 131.16,
+                    centuries: 0,
+                    format: "T20",
+                    strongVenues: ["Birmingham", "Eden Gardens"],
+                    weakVenues: ["Nottingham", "Birmingham"]
+                },
+                 {
+                    id: 9,
+                    name: "Beth Mooney",
+                    matches: 19,
+                    average: 33.60,
+                    strikeRate: 135.48,
+                    centuries: 0,
+                    format: "T20",
+                    strongVenues: ["The Oval", "Eden Gardens"],
+                    weakVenues: ["Manchester", "Birmingham"]
+                },
+                {
+                    id: 10,
                     name: "Kane Williamson",
                     matches: 151,
                     average: 47.48,
@@ -129,12 +151,12 @@ class CricketPredictor {
                 },
                     {
                     id: 3,
-                    name: "The Lords",
-                    city: "London",
+                    name: "Trent Bridge",
+                    city: "Nottingham",
                     country: "England",
-                    averageScore: 245,
+                    averageScore: 108,
                     venueFactor: 0.95,
-                    battingFriendly: false,
+                    battingFriendly: true,
                     boundarySize: "Medium",
                     pitchType: "Bowler-friendly"
                 },
@@ -151,6 +173,20 @@ class CricketPredictor {
                 {
                     id: 2,
                     name: "Southern Brave Women",
+                    bowlingStrength: 7.3,
+                    paceAttack: 7.3,
+                    spinAttack: 7.0
+                },
+                 {
+                    id: 3,
+                    name: "Trent Rockets Women",
+                    bowlingStrength: 6.5,
+                    paceAttack: 7.0,
+                    spinAttack: 6.1
+                },
+                 {
+                    id: 4,
+                    name: "Manchester Originals Women",
                     bowlingStrength: 12.6,
                     paceAttack: 15.0,
                     spinAttack: 10.0

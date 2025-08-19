@@ -550,7 +550,7 @@ factors.push({
         return analysis;
     }
 
-  getFormData() {
+ getFormData() {
     return {
         player: this.elements.playerSelect.value,
         venue: this.elements.venueSelect.value,
@@ -567,6 +567,7 @@ factors.push({
         daysSinceMatch: parseInt(this.elements.daysSinceMatch.value)
     };
 }
+
 
     displayResults(prediction) {
         console.log('Displaying results:', prediction);

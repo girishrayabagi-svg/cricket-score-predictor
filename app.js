@@ -434,9 +434,6 @@ class CricketPredictor {
         };
         const formatAdj = formatAdjustments[formData.format];
         baseScore = baseScore * formatAdj.multiplier;
-       
-        // Physical condition
-        let physicalMultiplier = 1;
 
         // Days since last match
         const daysSince = formData.daysSinceMatch;

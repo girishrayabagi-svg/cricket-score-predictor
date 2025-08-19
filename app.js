@@ -113,8 +113,30 @@ class CricketPredictor {
                     strongVenues: ["The Oval", "Eden Gardens"],
                     weakVenues: ["Manchester", "Birmingham"]
                 },
-                {
+                 {
                     id: 10,
+                    name: "Phil Salt",
+                    matches: 41,
+                    average: 27.66,
+                    strikeRate: 156.15,
+                    centuries: 0,
+                    format: "T20",
+                    strongVenues: ["The Oval", "Manchester"],
+                    weakVenues: ["Nottingham", "Birmingham"]
+                },
+                 {
+                    id: 11,
+                    name: "Tom Banton",
+                    matches: 35,
+                    average: 21.51,
+                    strikeRate: 134.46,
+                    centuries: 0,
+                    format: "T20",
+                    strongVenues: ["Nottingham", "Eden Gardens"],
+                    weakVenues: ["Southampton", "Birmingham"]
+                },
+                {
+                    id: 12,
                     name: "Kane Williamson",
                     matches: 151,
                     average: 47.48,
@@ -211,8 +233,22 @@ class CricketPredictor {
                     paceAttack: 8.3,
                     spinAttack: 6.8
                 },
-                {
+                 {
                     id: 8,
+                    name: "Trent Rockets",
+                    bowlingStrength: 7,
+                    paceAttack: 8.5,
+                    spinAttack: 6.
+                },
+                 {
+                    id: 9,
+                    name: "Manchester Originals",
+                    bowlingStrength: 7.5,
+                    paceAttack: 8.5,
+                    spinAttack: 6.5
+                },
+                {
+                    id: 10,
                     name: "South Africa",
                     bowlingStrength: 8.0,
                     paceAttack: 8.7,

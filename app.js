@@ -564,10 +564,8 @@ class CricketPredictor {
             dew: document.querySelector('input[name="dew"]:checked').value,
             windSpeed: parseInt(this.elements.windSpeed.value),
             recentForm: parseInt(this.elements.recentForm.value),
-            sleepQuality: parseInt(this.elements.sleepQuality.value),
             injury: document.querySelector('input[name="injury"]:checked').value,
             daysSinceMatch: parseInt(this.elements.daysSinceMatch.value),
-            mood: document.getElementById('mood-select').value,
             pressure: document.querySelector('input[name="pressure"]:checked').value,
             socialSentiment: parseInt(this.elements.socialSentiment.value)
         };

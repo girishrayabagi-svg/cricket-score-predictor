@@ -434,12 +434,9 @@ class CricketPredictor {
         };
         const formatAdj = formatAdjustments[formData.format];
         baseScore = baseScore * formatAdj.multiplier;
-
        
         // Physical condition
         let physicalMultiplier = 1;
-        
-      
 
         // Days since last match
         const daysSince = formData.daysSinceMatch;
@@ -596,7 +593,6 @@ class CricketPredictor {
             const bar = probBars[index];
             const fill = bar.querySelector('.prob-fill');
             const percent = bar.querySelector('.prob-percent');
-            
             const probability = prediction.probabilities[range];
             
             // Animate the bars
@@ -684,7 +680,6 @@ class CricketPredictor {
         const venue = this.data.venues.find(v => v.id === parseInt(venueElement.value));
         const predictedScore = document.getElementById('predicted-runs').textContent;
         const confidenceRange = document.getElementById('confidence-range').textContent;
-        
         const exportData = `Cricket Score Prediction Summary
 ========================================
 

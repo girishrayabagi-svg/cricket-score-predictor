@@ -550,25 +550,23 @@ factors.push({
         return analysis;
     }
 
-    getFormData() {
-        return {
-            player: this.elements.playerSelect.value,
-            venue: this.elements.venueSelect.value,
-            opposition: this.elements.oppositionSelect.value,
-            format: this.elements.formatSelect.value,
-            battingPosition: parseInt(this.elements.battingPosition.value),
-            weather: document.getElementById('weather-select').value,
-            temperature: parseInt(this.elements.temperature.value),
-            humidity: parseInt(this.elements.humidity.value),
-            dew: document.querySelector('input[name="dew"]:checked').value,
-            windSpeed: parseInt(this.elements.windSpeed.value),
-            recentForm: parseInt(this.elements.recentForm.value),
-            injury: document.querySelector('input[name="injury"]:checked').value,
-            daysSinceMatch: parseInt(this.elements.daysSinceMatch.value),
-            pressure: document.querySelector('input[name="pressure"]:checked').value,
-            socialSentiment: parseInt(this.elements.socialSentiment.value)
-        };
-    }
+  getFormData() {
+    return {
+        player: this.elements.playerSelect.value,
+        venue: this.elements.venueSelect.value,
+        opposition: this.elements.oppositionSelect.value,
+        format: this.elements.formatSelect.value,
+        battingPosition: parseInt(this.elements.battingPosition.value),
+        weather: document.getElementById('weather-select').value,
+        temperature: parseInt(this.elements.temperature.value),
+        humidity: parseInt(this.elements.humidity.value),
+        dew: document.querySelector('input[name="dew"]:checked')?.value || "no",
+        windSpeed: parseInt(this.elements.windSpeed.value),
+        recentForm: parseInt(this.elements.recentForm.value),
+        injury: document.querySelector('input[name="injury"]:checked')?.value || "none",
+        daysSinceMatch: parseInt(this.elements.daysSinceMatch.value)
+    };
+}
 
     displayResults(prediction) {
         console.log('Displaying results:', prediction);

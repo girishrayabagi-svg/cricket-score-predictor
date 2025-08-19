@@ -192,28 +192,28 @@ class CricketPredictor {
                     spinAttack: 10.0
                 },
                 {
-                    id: 3,
+                    id: 5,
                     name: "Southern Brave",
                     bowlingStrength: 8.1,
                     paceAttack: 8.5,
                     spinAttack: 7.2
                 },
                 {
-                    id: 4,
+                    id: 6,
                     name: "Oval Invincibles",
                     bowlingStrength: 8.3,
                     paceAttack: 8.8,
                     spinAttack: 8.0
                 },
                 {
-                    id: 5,
+                    id: 7,
                     name: "New Zealand",
                     bowlingStrength: 7.9,
                     paceAttack: 8.3,
                     spinAttack: 6.8
                 },
                 {
-                    id: 6,
+                    id: 8,
                     name: "South Africa",
                     bowlingStrength: 8.0,
                     paceAttack: 8.7,

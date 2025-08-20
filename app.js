@@ -83,8 +83,8 @@ class CricketPredictor {
                 {
                     id: 7,
                     name: "James Vince",
-                    matches: 40,
-                    average: 31.51,
+                    matches: 41,
+                    average: 30.79,
                     strikeRate: 138.85,
                     centuries: 0,
                     format: "T20",
@@ -137,6 +137,28 @@ class CricketPredictor {
                 },
                 {
                     id: 12,
+                    name: "Kane Williamson",
+                    matches: 151,
+                    average: 47.48,
+                    strikeRate: 81.71,
+                    centuries: 13,
+                    format: "ODI",
+                    strongVenues: ["Eden Park", "Hagley Oval"],
+                    weakVenues: ["Wankhede Stadium", "SCG"]
+                },
+                 {
+                    id: 13,
+                    name: "Jonny Bairstow",
+                    matches: 17,
+                    average: 34.40	,
+                    strikeRate: 139.08,
+                    centuries:0,
+                    format: "T20",
+                    strongVenues: ["Cardiff", "Hagley Oval"],
+                    weakVenues: ["Wankhede Stadium", "Cardiff"]
+                },
+         {
+                    id: 14,
                     name: "Kane Williamson",
                     matches: 151,
                     average: 47.48,

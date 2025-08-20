@@ -203,6 +203,17 @@ class CricketPredictor {
                     boundarySize: "Medium",
                     pitchType: "Bowler-friendly"
                 },
+                {
+                    id: 3,
+                    name: "Sophia Gardens",
+                    city: "Cardiff",
+                    country: "England",
+                    averageScore: 154,
+                    venueFactor: 0.95,
+                    battingFriendly: true,
+                    boundarySize: "Medium",
+                    pitchType: "Bowler-friendly"
+                },
                
             ],
             teams: [
@@ -237,9 +248,9 @@ class CricketPredictor {
                 {
                     id: 5,
                     name: "Southern Brave",
-                    bowlingStrength: 8.1,
-                    paceAttack: 8.5,
-                    spinAttack: 7.2
+                    bowlingStrength:19.59,
+                    paceAttack: 19.5,
+                    spinAttack: 5.9
                 },
                 {
                     id: 6,
@@ -250,10 +261,10 @@ class CricketPredictor {
                 },
                 {
                     id: 7,
-                    name: "New Zealand",
-                    bowlingStrength: 7.9,
-                    paceAttack: 8.3,
-                    spinAttack: 6.8
+                    name: "Welsh Fire",
+                    bowlingStrength: 17.5,
+                    paceAttack: 19.26,
+                    spinAttack: 25.33
                 },
                  {
                     id: 8,
